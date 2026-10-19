@@ -28,7 +28,7 @@ Act as the Incident Response Lead for a fictional training institute facing a su
 
 Northbridge Skills Institute is a fictional education and training provider with 1,800 learners and 90 staff. It holds learner contact details, admission documents, assessment records, and finance files. An online examination for 100 learners is scheduled for 11:00 on Day 0\. You take control of the incident at 08:45 on Day 0, a Monday. All times are West Africa Time (WAT).
 
-Its systems are FIN-PC07, a finance workstation; FS01, the shared file server; LMS01, the learning portal; and BAK01, the network backup repository. Microsoft 365 provides identity and email. The portal depends on files stored on FS01. The svc\_backup account has administrator access to FS01 and BAK01.
+Its systems are FIN-PC07, a finance workstation; FS01, the shared file server; LMS01, the learning portal; and BAK01, the network backup repository. Microsoft 365 provides identity and email. The portal depends on files stored on FS01. The svc_backup account has administrator access to FS01 and BAK01.
 
 The last disconnected backup is from 17:00 on Day minus 3, the preceding Friday. Network backups are not immutable. Neither backup route has undergone a restoration test in the last 90 days. EDR covers workstations, but server coverage is incomplete. The IT team has three staff and one security analyst.
 
@@ -36,14 +36,14 @@ The last disconnected backup is from 17:00 on Day minus 3, the preceding Friday.
 
 | ID | Time WAT | Source and observation |
 | :---- | :---: | :---- |
-| E01 | Day minus 116:40 | User report and mail record: a finance officer opened an unexpected payroll attachment on FIN-PC07. Execution of malicious code is not yet verified. |
-| E02 | Day 001:15 | Microsoft 365 audit: the finance officer account signed in from an unfamiliar IP and new device. MFA status and the user's involvement are unknown. |
-| E03 | Day 001:35 | Windows logs: svc\_backup made remote administrator logons to FS01 and BAK01 outside its usual schedule. The reason is unknown. |
-| E04 | Day 001:50 | Proxy record: FIN-PC07 uploaded 1.2 GB over HTTPS to unfamiliar cloud storage. The record does not reveal the transferred content. |
-| E05 | Day 002:00 | Backup console: the FS01 and LMS01 job reports success. Recoverability and freedom from compromise have not been established. |
-| E06 | Day 008:30 | EDR and helpdesk: mass file changes occur on FIN-PC07. FS01 shared folders contain .locked files and a ransom note. The malware family is unconfirmed. |
-| E07 | Day 008:40 | Helpdesk: the portal login page loads, but learners cannot open materials or submit assessments. The scope of damage to LMS01 remains unknown. |
-| E08 | Day 008:45 | Operations report: the incident contact list on FS01 is inaccessible. Staff phones are available. The trustworthiness of corporate email is unverified. |
+| E01 | Day minus 1, 16:40 | User report and mail record: a finance officer opened an unexpected payroll attachment on FIN-PC07. Execution of malicious code is not yet verified. |
+| E02 | Day 0, 01:15 | Microsoft 365 audit: the finance officer account signed in from an unfamiliar IP and new device. MFA status and the user's involvement are unknown. |
+| E03 | Day 0, 01:35 | Windows logs: svc_backup made remote administrator logons to FS01 and BAK01 outside its usual schedule. The reason is unknown. |
+| E04 | Day 0, 01:50 | Proxy record: FIN-PC07 uploaded 1.2 GB over HTTPS to unfamiliar cloud storage. The record does not reveal the transferred content. |
+| E05 | Day 0, 02:00 | Backup console: the FS01 and LMS01 job reports success. Recoverability and freedom from compromise have not been established. |
+| E06 | Day 0, 08:30 | EDR and helpdesk: mass file changes occur on FIN-PC07. FS01 shared folders contain .locked files and a ransom note. The malware family is unconfirmed. |
+| E07 | Day 0, 08:40 | Helpdesk: the portal login page loads, but learners cannot open materials or submit assessments. The scope of damage to LMS01 remains unknown. |
+| E08 | Day 0, 08:45 | Operations report: the incident contact list on FS01 is inaccessible. Staff phones are available. The trustworthiness of corporate email is unverified. |
 
 These observations do not establish attacker identity or prove that personal data was stolen. Cite evidence IDs in your decisions and label additional assumptions. Use fictional contact details and record proposed evidence collection as planned.
 
@@ -133,12 +133,12 @@ The assignment is marked out of 100\. The weighted contribution is a maximum of 
 
 | Assessment area | Mark allocation and evidence expected | Marks |
 | :---- | :---- | :---: |
-| Task 1Initial assessment | Severity and justification (5); evidence linked timeline with uncertainty (6); impact, priorities, and investigation checks (4). | 15 |
-| Task 2Plan and roles | Usable policy, authority, and escalation (6); realistic CSIRT and correct RACI (8); readiness, resources, and continuity integration (6). | 20 |
-| Task 3Response playbook | Sequenced containment and justified tradeoffs (7); evidence integrity and custody (5); eradication and scope checks (6); safe restoration, monitoring, and acceptance (7). | 25 |
-| Task 4Communication | Stakeholders, channels, approval, and escalation (5); accurate executive briefing (3); clear learner notice with practical next steps (2). | 10 |
-| Task 5Tabletop exercise | Objectives, roles, agenda, injects, and success criteria (5); reasoned simulated decision log (5); measurable improvement plan and review (5). | 15 |
-| Task 6Case study analysis | Evidence based critique of the healthcare case (4); justified transfer to Northbridge (4); reflection on a revised decision (2). | 10 |
+| Task 1, Initial assessment | Severity and justification (5); evidence linked timeline with uncertainty (6); impact, priorities, and investigation checks (4). | 15 |
+| Task 2, Plan and roles | Usable policy, authority, and escalation (6); realistic CSIRT and correct RACI (8); readiness, resources, and continuity integration (6). | 20 |
+| Task 3, Response playbook | Sequenced containment and justified tradeoffs (7); evidence integrity and custody (5); eradication and scope checks (6); safe restoration, monitoring, and acceptance (7). | 25 |
+| Task 4, Communication | Stakeholders, channels, approval, and escalation (5); accurate executive briefing (3); clear learner notice with practical next steps (2). | 10 |
+| Task 5, Tabletop exercise | Objectives, roles, agenda, injects, and success criteria (5); reasoned simulated decision log (5); measurable improvement plan and review (5). | 15 |
+| Task 6, Case study analysis | Evidence based critique of the healthcare case (4); justified transfer to Northbridge (4); reflection on a revised decision (2). | 10 |
 | Report qualityand referencing | Clear structure and usable tables (2); credible sources and consistent citations (2); transparent assumptions and professional writing (1). | 5 |
 | Total | Maximum contribution to the course grade: 20%. | 100 |
 
