@@ -37,3 +37,39 @@ The incident should be classified as a suspected ransomware attack with potentia
 | High | A confirmed security incident significantly affects a business function or important system, but the impact is contained and critical services can continue through safe alternatives. Rapid response and management notification are required. |
 | Medium | A limited incident affects a small number of systems or users, with manageable operational impact and no current evidence of wider compromise. A coordinated response is required. |
 | Low | A minor security event with limited impact, no confirmed compromise of important systems, and no significant disruption to business operations. Normal incident procedures are sufficient. |
+
+**Selected Level: Critical**
+**Operational impact:** Learning portal is disrupted, FS01 is encrypted and unauthorized changes was indentified on FIN-PC07.
+**Affected data:** Contact list on FS01 is inaccessible, and backup access is suspicious. A data theft cannot be ruled out.
+**Uncertainty:** This will be reviewed further as more evidence becomes available. 
+
+### Affected assets
+
+| Asset | Confidentiality | Integrity | Availability |
+| :---- | :---: | :---- | :---- |
+| FIN-PC07 (Finance workstation) | Potentially affected due to the 1.2 GB data upload (Evidence 04). | Likely affected by mass file changes (Evidence 06). | Potentially affected, as the extent is still unknown. |
+| FS01 (File server) | Potentially affected due to suspicious privileged access (Evidence 03). | Confirmed impact from .locked files and the ransom note (Evidence 06). | Confirmed impact because shared files are inaccessible (Evidence 06). |
+| LMS01 (Learning portal) | Still unknown, as there's no direct evidence of data exposure. | Unknown, as the extent of damage is yet to be confirmed. | Confirmed impact because learners cannot access materials or submit assessments (Evidence 07). |
+| BAK01 (Backup repository) | Potentially affected by suspicious admin access (Evidence 03). | Unknown, as backup integrity has not been verified (Evidence 05). | Unknown. Successful backup jobs do not confirm recoverability (Evidence 05). |
+| Microsoft 365 | Potentially affected by an unusual sign-in (Evidence 02). | No confirmed unauthorised changes. | Service availability is not reported as affected. |
+
+**Response priorities**
+1. Isolate affected systems to prevent further encryption.
+2. Secure privileged accounts and protect backups.
+3. Investigate Microsoft 365 and possible data exfiltration.
+4. Check other systems for signs of compromise.
+5. Prepare an examination postponement plan rather than restoring from a backup that the integrity is yet to be verified.
+6. Use staff phones and verified communication channels.
+
+
+### Priority investigation
+
+| Question | Evidence to investigate | Findings impact |
+| :---- | :---: | :---- |
+| How did the attacker gain access? | Examine the payroll email and attachment, endpoint telemetry from FIN-PC07, process execution logs, and available security alerts. | This may help confirm how the attacker gained access. |
+| What information was stolen? | Review proxy logs, DNS records, firewall records, endpoint network telemetry, cloud destination details, and available file-access logs. | Confirmed theft would increase privacy and legal concerns. |
+| Are backups compromised? | Review authentication logs, administrator activity, backup console audit logs, backup deletion or modification events, and available snapshots. Also restore backup files in a test environment. | Compromise backup could delay recovery. |
+| Has the attack spread? | Examine EDR alerts, Windows event logs, file-server logs, network connections, privileged logons, and available LMS01 and BAK01 telemetry. | More affected systems could increase the incident scope. |
+| Is Microsoft 365 compromised? | Sign-in logs, MFA and mailbox audit logs. | Malicious access could require wider identity containment. |
+
+
